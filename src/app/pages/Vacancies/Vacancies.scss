@@ -1,0 +1,159 @@
+@import '../../index';
+
+.vacancy-container {
+    margin: 60px auto;
+    display: flex;
+    height: 900px;
+
+    .vacancy-overview {
+        background-color: $lightorgange-color;
+        padding: 10px;
+        position: relative;
+        border-radius: 10px 0 0 10px;
+        overflow-y: scroll !important;
+
+        .error-message {
+            @include fontText;
+            color: $darkgrey-color;
+            text-align: center;
+        }
+
+        .line-shadow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            box-shadow: -2px 0  10px rgba(0, 0, 0, 0.22);
+            height: 100%;
+        }
+    }
+
+    .vacancy-detail {
+        background-color:$lightgrey-color;
+        border-radius: 0 10px 10px 0;
+        padding: 50px 50px;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position:relative;
+        
+        .vacancy-detail__new-tab {
+            width: 50px;
+            height: 50px;
+            background-color: $blue-color;
+            border-radius: 50%;
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            background-image: url('../../assets/icons/newTab.svg');
+            background-size: 40%;
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+
+        .vacancy-detail__cta {
+            height: 20%;
+
+            .vacancy-detail-cta__container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 25px;
+
+                div {
+                    width: 50%;
+                }
+
+                h3 {
+                    font-family: $secundary-font;
+                    font-size: calculateRem($font-medium);
+                    font-weight: 500;
+                    color: $mediumgrey-color;
+                    margin: 0 0 15px;
+                }
+    
+                input {
+                    height: 40px;
+                    width: 200px;
+                }
+
+                &--share {
+                    margin-top: 15px;
+                }
+
+                .vacancy-detail-cta__contact {
+                    div {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+
+                    h3 { 
+                        width: 100%;
+                        font-size: 14px;
+                        
+                    }
+
+                    img {
+                        min-width: 80px;
+                        height: 80px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+
+                    p {
+                        @include fontTitle;
+                        font-size: $font-medium;
+                        margin: 0 0 10px 0;
+                    }
+
+                    ul {
+                        @include fontText;
+                        list-style: none; /* Remove default bullets */
+                        padding:  0 15px;
+                        margin: 0;
+                    }
+
+                     ul li {
+                         display: flex;
+                         align-items: center;
+
+                         a {
+                            @include fontText;
+                            text-decoration: none;
+                         }
+                        span {
+                            display: inline-block;
+                            width: 12px;
+                            height: 12px;
+                            background-color: $orange-color;
+                            border-radius: 50%;
+                            margin-right: 10px
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}
+
+.vacancy-container--md {
+    max-height: 800px;
+
+    .vacancy-detail__cta .vacancy-detail-cta__container div p {
+        font-size: calculateRem($font-medium) !important;
+    }
+}
+
+.vacancy-container--mob {
+    .vacancy-overview {
+        border-radius: 5px;
+        background-color: initial;
+        overflow-y: visible;
+    }
+}

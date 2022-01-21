@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+/** All variables **/
+// Colors
+$blue-color: #009FE3;
+$lightblue-color: #D6EEFB;
+$orange-color: #FF9250;
+$lightorgange-color : #ffeade;
+$darkgrey-color: #7B7B7B;
+$grey-color: #CFCFCF;
+$mediumgrey-color: #929292;
+$lightgrey-color: #F9F9F9;
+$white-color: #F6FCFF;
+$bg-color: white;
+$black-color: black;
+
+// Fonts
+$primary-font: 'Fira Sans', sans-serif;
+$secundary-font: 'Open Sans', sans-serif;
+
+// Sizes
+$font-small: 11px;
+$font-small-regular: 13px;
+$font-regular: 14px;
+$font-medium: 18px;
+$font-medium-large: 24px;
+$font-large: 40px;
+$font-xl: 75px;
+
+// Sizes mobile
+$font-regular-mob: 13px;
+$font-medium-large-mob: 20px;
+$font-large-mob: 28px;
+
+// Heights
+$input-height: 50px;
+
+/** All functions **/
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+};
+
+/** All mixins **/
+@mixin fontSize($size) {
+    font-size: $size; //Fallback
+    font-size: calculateRem($size);
+}
+
+@mixin inputStyle($input-size) {
+    position: relative;
+    min-height: $input-size;
+    height: $input-size;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+
+    font-family: $secundary-font;
+
+    &__input {
+        z-index: 1;
+        height: 100%;
+        background-color: transparent;
+        padding: 0 20px;
+        border: 1px solid $grey-color;
+        border-radius: 10px;
+        font-size: $font-regular;
+        outline: none;
+        width: 100%;
+    }
+
+    &__input:focus {
+        border-color: $blue-color;
+    }
+
+    &__label {
+        line-height: $input-size;
+        position: absolute;
+        top:0;
+        padding: 0 10px;
+        margin: 0 0 0 15px;
+        color: $darkgrey-color;
+        font-size: $font-regular;
+        border-radius: 10px;
+
+        transition: top 0.1s ease 0s;
+    }
+
+    &__label--active {
+        // top: -25%;
+        top: -10px; 
+        z-index: 2;
+        line-height: initial !important;
+        // background-color: $bg-color;
+        padding: 0 10px;
+
+        transition: top 0.1s ease 0s;
+    }
+}
+
+@mixin fontTitle {
+    font-size: $font-large;
+    font-family: $primary-font;
+    color: $blue-color;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 50px;
+
+    @media (max-width: 1199.98px) {
+        font-size: $font-large-mob;
+    }
+}
+
+@mixin fontText {
+    font-family: $secundary-font;
+    font-size: $font-regular;
+    font-weight: 400;
+    line-height: 150%;
+    color: $black-color;
+    line-height: 1.5;
+
+    @media (max-width: 1199.98px) {
+        font-size: $font-regular-mob;
+    }
+}
+
+@mixin noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+
+// Background
+.bg-secondary {
+    background-color: $orange-color;
+}
+
+.bg-tertiary {
+    background-color: $lightgrey-color;
+}
+
+// Delete padding and margin root
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// BOOTSTRAP OVERRIDE
+@media (min-width: 1199.98px) {
+    .container{
+        max-width : 1300px !important;
+    }
+}

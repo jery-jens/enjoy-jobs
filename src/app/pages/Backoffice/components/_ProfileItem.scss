@@ -1,0 +1,124 @@
+@import '../../../index';
+
+.profile {
+    &__item {
+        margin-top: 50px;
+        &--top {
+            width: 100%;
+            border-bottom: 0.5px solid $blue-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            position: relative;
+            transition: ease-in-out 0.5s;
+
+            h5 {
+                font-family: $primary-font;
+                font-size: $font-medium;
+                margin: 0;
+            }
+
+            span {
+                width: 25px;
+                height: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                border: 2px solid $orange-color;
+                cursor: pointer;
+
+                img {
+                    width: 10px;
+                    transition: ease-in-out 0.5s;
+                }
+            }
+        }
+
+        &--content {
+            margin-top: 20px;
+
+            .input-text {
+                margin-bottom: 20px;
+            }
+
+            .input-date {
+                margin-bottom: 20px;
+            }
+
+            .input-select {
+                margin-bottom: 20px;
+            }
+
+            .input-search {
+                margin-bottom: 20px;
+            }
+
+            &--img {
+                width: 100%;
+                height: 550px;
+                background-size: cover;
+                background-position: center center;
+                position: relative;
+
+                span {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    cursor: pointer;
+                    position: absolute;
+
+                    img {
+                        width: 15px;
+                        transition: ease-in-out 0.5s;
+                    }
+                }
+
+                input {
+                    display: none;
+                }
+
+                &__edit {
+                    background-color: $orange-color;
+                    left: 20px;
+                    bottom: 20px;
+                }
+
+                &__delete {
+                    background-color: #ff4444;
+                    left: 70px;
+                    bottom: 20px;
+                }
+
+                &__edit:hover {
+                    img {
+                        transform: rotate(10deg) scale(1.1);
+                    }
+                }
+
+                &__delete:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    &__item.active-item {
+        .profile__item--top {
+            border-bottom: 0.5px solid rgba($color: #000000, $alpha: 0.0);
+
+            &--button {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

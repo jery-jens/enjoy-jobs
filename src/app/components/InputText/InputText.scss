@@ -1,0 +1,19 @@
+@import '../../index';
+
+
+.input-text {
+    @include inputStyle($input-height);
+}
+
+// Media queries
+@media (max-width: 991.98px) {
+    .input-text {
+        &__input {
+            font-size: $font-small !important;
+        }
+
+        &__label {
+            font-size: $font-small !important;
+        }
+    }
+}

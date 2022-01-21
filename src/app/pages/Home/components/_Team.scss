@@ -1,0 +1,163 @@
+@import '../../../index';
+
+.team {
+    position: relative;
+    width: 100%;
+    padding: 10vh 0 5vh 0;
+    margin-bottom: 150px;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: 
+     border-box; box-sizing: border-box; 
+
+    &__title {
+        @include fontTitle;
+    }
+
+    &__members {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 50px;
+
+
+        .swiper-pagination-bullet-active {
+            background-color: $orange-color !important;
+        }
+
+        &--member {
+            width: 100%;
+            display: none;
+            transition: ease-in-out 0.5s;
+            position: relative;
+            margin-bottom: 60px;
+
+            &__content {
+                height: 400px;
+                overflow: hidden;
+                position: relative;
+                z-index: 1001;
+
+                &--img {
+                    background-color: #000000;
+                    width: 100%;
+                    height: 100%;
+                    transition: ease-in-out 0.5s;
+                    overflow: hidden;
+                    background-size: cover;
+                    background-position: center center;
+                }
+
+                &--text {
+                    height: 60%;
+                    width: 100%;
+                    background: #ffffff;
+                    position: relative;
+
+                    h5 {
+                        margin: 0;
+                        font-size: calculateRem($font-medium);
+                        font-family: $secundary-font;
+                        color: $blue-color;
+                        padding: 20px 20px 0 20px;
+                    }
+
+                    h6 {
+                        margin: 0;
+                        padding: 0px 20px;
+                        font-size: calculateRem($font-medium);
+                        font-family: $secundary-font;
+                        font-weight: 200;
+                        color: #000000;
+                    }
+
+                    p {
+                        color: #000000;
+                        font-size: $font-regular;
+                        font-family: $secundary-font;
+                        font-weight: 200;
+                        padding: 20px;
+                        margin: 0;
+                        color: #000000;
+                    }
+
+                    &__contact {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        span {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                height: 20px;
+                                margin-right: 10px;
+                            }
+
+                            a {
+                                color: #000000;
+                                font-weight: 200;
+                                font-family: $secundary-font;
+                                font-size: $font-small-regular;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__name {
+                color: #000000;
+                font-family: $primary-font;
+                margin: 0;
+                font-size: calculateRem($font-medium-large);
+                margin-top: 20px;
+                opacity: 1;
+                transition: ease-in-out 0.5s;
+                position: relative;
+                top: 0;
+            }
+
+            &__function {
+                color: $blue-color;
+                font-family: $primary-font;
+                margin: 0;
+                margin-top: 5px;
+                font-weight: 400;
+                font-size: calculateRem($font-medium-large);
+                opacity: 1;
+                transition: ease-in-out 0.5s;
+                position: relative;
+                top: 0;
+            }
+        }
+
+        &--member.active-member {
+            .team__members--member__content {
+                &--img {
+                    height: 40% !important;
+                }
+            }
+
+            .team__members--member__name, .team__members--member__function {
+                top: -200px;
+            }
+        }
+
+        &--member.unhidden-member {
+            display: block;
+            opacity: 1;
+        }
+    }
+}
+
+/** Media queries **/
+@media (max-width: 991.98px) {
+    .team__title {
+        font-size: calculateRem(28px);
+    }
+
+    .team__members--member__content {
+        height: 500px;
+    }
+}

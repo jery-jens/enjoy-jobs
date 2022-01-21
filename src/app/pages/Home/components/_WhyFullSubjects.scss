@@ -1,0 +1,32 @@
+@import '../../../index';
+
+.why-full-subjects {
+  margin-bottom: 150px;
+
+  &__subject {
+    background-color: white;
+    box-shadow: 0px 3px 22px rgba(64, 64, 64, 0.1);  
+    border-radius: 10px;
+    padding: 30px 50px;
+    margin-bottom: 10px;
+    min-height: 280px;
+
+    &--title {
+      font-family: $primary-font;
+      font-weight: bold;
+      font-size: $font-medium;
+      margin-bottom: 30px;
+
+      img {
+        height: 45px;
+        margin-right: 20px;
+      }
+    }
+
+    &--content {
+      font-family: $secundary-font;
+      font-size: $font-regular;
+      line-height: 1.5;
+    }
+  }
+}

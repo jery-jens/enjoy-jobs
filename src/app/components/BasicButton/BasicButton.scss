@@ -1,0 +1,26 @@
+@import '../../index';
+
+.basic-button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    height: $input-height;
+    border: none;
+    border-radius: 10px;
+    padding: 0 30px;
+    font-family: $secundary-font;
+    color: $white-color;
+    font-weight: bold;
+    width: 100%;
+    background-color: $blue-color;
+}
+
+.basic-button:hover {
+    cursor: pointer;
+}
+
+// Media queries
+@media (max-width: 991.98px) {
+    .basic-button {
+        font-size: $font-small !important;
+    }
+}

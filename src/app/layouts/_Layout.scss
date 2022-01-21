@@ -1,0 +1,12 @@
+@import '../index';
+
+.app {
+    width: 100%;
+    overflow: hidden;
+
+    &-content {
+        // margin-top: 230px;
+        margin-top: 60px;
+        min-height: 100vh;
+    }
+}

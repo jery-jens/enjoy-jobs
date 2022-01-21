@@ -1,0 +1,78 @@
+@import '../../index';
+
+.vacancy-detail-container {
+    height: 77%;
+
+    .error-message {
+        @include fontText;
+        text-align: center;
+        color: $darkgrey-color;
+    }
+
+    .vacancy-detail__head {
+        h1 {
+            @include fontTitle;
+            margin: 15px 0;
+        }
+        
+        .vacancy-detail-head__sub-title-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        
+            h3 {
+                font-family: $secundary-font;
+                font-size: calculateRem($font-medium);
+                font-weight: 400;
+                color: $mediumgrey-color;
+                margin: 0 0 5px;
+            }
+            
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                span {
+                    @include fontText;
+                    background-color: $blue-color;
+                    padding: 7px 20px;
+                    margin-bottom: 10px;
+                    color: $white-color;
+                    margin-left: 20px;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    
+    
+    .vacancy-detail__description {
+        overflow-y: scroll;
+        @include fontText;
+        height: 80%;
+    
+        strong {
+            color: $orange-color;
+        }
+    
+        li {
+            list-style: none; /* Remove default bullets */
+        }
+    
+        li::before {
+            content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+            color: $blue-color; /* Change the color */
+            font-weight: bold; /* If you want it to be bold */
+            display: inline-block; /* Needed to add space between the bullet and the text */ 
+            width: 1em; /* Also needed for space (tweak if needed) */
+            margin-left: -1em; /* Also needed for space (tweak if needed) */
+          }
+    }
+
+    .vacancy-detail__description--no-overflow {
+        overflow-y: initial;
+    }
+}
+

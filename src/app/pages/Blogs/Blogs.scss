@@ -1,0 +1,27 @@
+@import '../../index';
+
+.blogs {
+  &__title {
+    @include fontTitle;
+  }
+
+  &__pagination {
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+    a {
+      font-size: $font-regular;
+      color: white;
+      background-color: $blue-color;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: $primary-font;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+  }
+}

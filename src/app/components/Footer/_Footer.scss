@@ -1,0 +1,116 @@
+@import '../../index';
+
+.footer {
+    padding: 25px;
+    &__body {
+        width: 100%;
+        padding: 50px 30px;
+
+        div {
+            margin: 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            img {
+                width: 100%;
+                max-width: 150px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                @include fontTitle;
+                font-size: $font-medium-large;
+                margin-bottom: 20px;
+            }
+
+            p {
+                @include fontText;
+                margin-bottom: 7px; 
+            }
+
+            a {
+                @include fontText;
+                margin: 7px 0;
+                color: black;
+                display: inline;
+            }
+
+            .a--no-css {
+                text-decoration: none;
+            }
+        }
+
+        .socials {
+            margin: 10px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 150px;
+            a {
+                width: 30px;
+                height: 30px;
+                img {
+                    // width: 100%;
+                    // height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    &__publishers {
+        @include fontText;
+        font-size: $font-small-regular;
+        font-weight: 300;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.footer__body--sm {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    padding: 20px 0;
+
+    flex-direction: column;
+    align-items: center;
+
+    .socials {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            width: 45px;
+            height: 45px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    div {
+        margin-top: 40px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        a {
+            @include fontText;
+            font-weight: 300;
+            margin: 7px 0;
+            color: black;
+            display: inline;
+        }
+    }
+
+    .footer__publishers {
+        p {
+            width: 100%;
+            text-align: center;
+            
+        }
+    }
+}

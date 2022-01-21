@@ -1,0 +1,88 @@
+@import '../../../index';
+
+.references {
+    width: 100%;
+    padding: 10vh 0;
+    margin-bottom: 150px;
+
+    &__title {
+        @include fontTitle;
+    }
+
+    &__item {
+        margin-bottom: 50px;
+        background-color: #ffffff;
+        padding: 40px 30px;
+        position: relative;
+        min-height: 330px;
+
+        &--img {
+            display: flex;
+            justify-content: center;
+
+            span {
+                width: 70px;
+                height: 70px;
+                border-radius: 100%;
+                background-size: cover;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h2 {
+            color: $blue-color;
+            text-align: center;
+            font-family: $secundary-font;
+            font-size: $font-medium;
+            padding: 20px 0 0 0;
+            margin: 0;
+        }
+
+        h4 {
+            color: #000;
+            text-align: center;
+            font-family: $secundary-font;
+            font-size: $font-regular;
+            font-weight: 200;
+            padding: 20px 0 30px 0;
+            margin: 0;
+        }
+
+        p {
+            // text-align: center;
+            font-family: $secundary-font;
+            font-size: $font-regular;
+            margin: 0;
+            position: relative;
+            z-index: 1001;
+            line-height: 1.5;
+
+            strong {
+                color: $blue-color;
+            }
+        }
+
+        img {
+            opacity: 0.2;
+            position: absolute;
+            top: 140px;
+            z-index: 1000;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $orange-color !important;
+    }
+}
+
+/** Media queries **/
+@media (max-width: 991.98px) {
+    .references {
+        &__title {
+            font-size: calculateRem(28px);
+        }
+    }
+}

@@ -1,0 +1,135 @@
+@import '../../index';
+
+.authentication {
+    margin: 50px 0px;
+
+    h1 {
+        font-size: $font-medium-large;
+        font-family: $primary-font;
+        font-weight: 500;
+        margin: 0;
+        margin-left: 20px;
+    }
+
+    h1.only-title {
+        margin-bottom: 50px;
+    }
+
+    .input-text:nth-of-type(1) {
+        margin-bottom: 20px;
+    }
+
+    .input-text:nth-of-type(2) {
+        margin-bottom: 10px;
+    }
+
+    .form-container {
+        display: block;
+        position: relative;
+        transition: ease-in-out 0.5s;
+    }
+
+    .form-container.next-form {
+        opacity: 0 !important;
+    }
+
+    .form-container.hidden-form {
+        display: none !important;
+        opacity: 0;
+    }
+
+    .form-container.show-hidden-form {
+        opacity: 1;
+    }
+
+    &__button {
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        .slide-button-container {
+            p {
+                font-family: $secundary-font;
+                cursor: pointer;
+                font-size: $font-regular;
+                text-align: center;
+                text-decoration: underline;
+            }
+
+            p:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $secundary-font;
+        font-size: $font-regular;
+        margin-bottom: 40px;
+        margin-left: 20px;
+
+        strong {
+            font-weight: 700;
+            color: $darkgrey-color;
+        }
+    }
+
+    a {
+        font-family: $secundary-font;
+        font-weight: 400;
+        font-size: $font-regular;
+        text-decoration: underline;
+        margin-left: 20px;
+        color: black;
+    }
+
+    .succes-holder {
+        animation: 2s fadeIn alternate;
+        -o-animation: 2s fadeIn alternate;
+        -moz-animation: 2s fadeIn alternate;
+        -webkit-animation: 2s fadeIn alternate;
+
+        h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        p {
+            text-align: center;
+            font-family: $secundary-font;
+            font-size: $font-regular;
+        }
+
+        &__icon {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 70px;
+            }
+        }
+    }
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

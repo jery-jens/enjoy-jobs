@@ -1,0 +1,59 @@
+@import '../../index';
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    .not-found__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .not-found-content__404 {
+            font-family: $primary-font;
+            font-size: 360px;
+            margin: 0;
+            font-weight: 800;
+            color: #FBECE4;
+        }
+        .not-found-content__text {
+            position: relative;
+            top: -140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;    
+
+            h1 {
+                @include fontTitle;
+                text-align: center;
+            }
+            p{
+                @include fontText; 
+                text-align: center;
+            }
+            div {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                a {
+                    @include fontText; 
+                    color: $orange-color;
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+
+    .not-found__content--md, .not-found__content--mob {
+        .not-found-content__404 {
+            font-size: 200px;
+        }
+
+        .not-found-content__text {
+            top: -80px
+        }
+    }
+
+    .not-found__content--sm {
+        
+    }
+}

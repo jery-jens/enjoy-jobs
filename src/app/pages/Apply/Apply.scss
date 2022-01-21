@@ -1,0 +1,215 @@
+
+@import '../../index';
+
+.apply {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-sidebar {
+        h1 {
+            padding-top: 20px;
+            @include fontTitle;
+        }
+        h3 {
+            @include fontText;
+            color: $darkgrey-color;
+            font-weight: 600;
+        }
+
+        &__vacany-info {
+            margin-bottom: 100px;
+            h2 {
+                font-family: $primary-font;
+                // font-size: calculateRem(22px);
+                font-size: calculateRem($font-medium-large);
+                font-weight: 400;
+                color: $blue-color;
+                margin: 0 ;
+            }
+        
+            p {
+                font-family: $secundary-font;
+                font-size: calculateRem($font-regular);
+                font-weight: 300;
+                color: $mediumgrey-color;
+                margin: 0 0 5px;
+            }
+        }
+
+        &__apply-options {
+
+            ul {
+                @include fontText;
+                list-style: none; /* Remove default bullets */
+                padding:  0 15px;
+                margin: 0;
+            }
+
+            p:nth-of-type(2) {
+                color: $darkgrey-color;
+
+                margin-top: 0px;
+            }
+
+             ul  .applying-option {
+                display: flex;
+                align-items: flex-start;
+                .option-title {
+                    margin-top: 0;
+                    cursor: pointer;
+                }
+            }
+
+            ul .applying-option::before {
+                content: "";
+                display: block;
+                min-width: 12px;
+                height: 12px;
+                background-color: transparent;
+                border: 2px solid $orange-color;
+                border-radius: 50%;
+                margin: 4px 10px 0 0;
+            }
+
+            ul .applying-option--active {
+                .option-title {
+                    color: $orange-color;
+                    font-weight: 600;
+                }
+            }
+
+            ul .applying-option--active::before {
+                background-color: $orange-color;
+            }
+        }
+    }
+
+    &-form-container {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $lightgrey-color;
+        border-radius: 10px;
+        width: 100%;
+        padding: 50px 30px 50px 30px !important;
+
+        .form-file-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .form-subcontainer {
+            margin-bottom: 20px;
+
+            h1 {
+                @include fontTitle;
+                font-size: 30px;
+                font-weight: 400;
+            }
+
+            .account-info {
+                @include fontText;
+                a {
+                    color: $blue-color;
+                }
+            }
+
+            .input-textarea {
+                height: 100px;
+            }
+        }
+        
+
+        .application-switch {
+            align-items: center;
+            width: 80%;
+            position: relative;
+            background-color: $lightblue-color;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 10px;
+            div {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                p{
+                    @include fontText;
+                    color: $lightorgange-color;
+                    width: 50%;
+                    text-align: center;
+                    margin: 0;
+
+                    z-index: 1;
+                    transition: color 0.2s 0.1s;
+                    cursor: pointer;
+                }
+            }
+
+            div::before {
+                content: "";
+                margin-left: 50%;
+                width: 50%;
+                height: 100%;
+                background-color: $blue-color;
+                position: absolute;
+                top: 0;
+                transition: all 0.5s;
+                border-radius: 10px;
+            }
+
+            .select-right {
+                p {
+                    color: $blue-color;
+                }
+                p:nth-of-type(2) {
+                    color: $lightorgange-color;
+                }
+            }
+
+            .select-left {
+                p {
+                    color: $blue-color;
+                }
+                p:nth-of-type(1) {
+                    color: $lightblue-color;
+                }
+            }
+
+            .select-right::before {
+                margin-left: 50%;
+                box-shadow: -2px 0px 10px rgba(0,0,0, 0.2);
+            }
+            .select-left::before {
+                margin-left: 0;
+                box-shadow: 2px 0px 10px rgba(0,0,0, 0.2);
+            }
+        }
+
+
+        .confirmation, .error {
+            @include fontText;
+            color: $blue-color;
+            margin: auto;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .error {
+            color: $orange-color;
+        }
+    }
+}
+
+.apply--md {
+    .apply-sidebar {
+        h1 {
+            padding-top: 30px;
+            @include fontTitle;
+        }
+    }
+}
+
+.apply--mob {
+    .apply-form-container {
+        padding: 50px 0 !important;
+        justify-content: center;
+    }
+}

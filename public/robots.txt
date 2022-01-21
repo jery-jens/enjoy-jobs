@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /profile
+Disallow: /contact/persoonlijkheidstest
+Disallow: /contact-succes
+Disallow: /apply
+Disallow: /apply-succes
+Disallow: /resetpassword&token=*

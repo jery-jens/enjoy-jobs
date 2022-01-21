@@ -1,0 +1,70 @@
+@import '../../index';
+
+.profile {
+    &__error {
+        background-color: #ff4444;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-bottom: 40px;
+        font-family: $primary-font;
+        font-size: $font-small-regular;
+        font-weight: 400;
+    }
+
+    &__head {
+        margin-bottom: 70px;
+
+        &--title {
+            font-family: $primary-font;
+            color: $blue-color;
+            font-size: $font-medium-large;
+            margin: 0;
+        }
+
+        &--save {
+            background-color: #23AB0D;
+            color: white;
+            font-family: $secundary-font;
+            font-size: $font-small-regular;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: ease-in-out 0.5s;
+        }
+
+        &--delete {
+            background-color: #dc3545;
+            color: white;
+            font-family: $secundary-font;
+            font-size: $font-small-regular;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: ease-in-out 0.5s;
+            margin-left: 10px;
+        }
+
+        &--settings {
+            width: 25px;
+            cursor: pointer;
+            transition: ease-in-out 0.5s;
+            margin-left: 10px;
+        }
+
+        &--save:hover {
+            opacity: 0.8;
+        }
+
+        &--settings:hover {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+// Media queries
+@media (max-width: 991.98px) {
+    .profile__head--save, .profile__head--delete {
+        font-size: $font-small;
+        margin-top: 20px;
+    }
+}

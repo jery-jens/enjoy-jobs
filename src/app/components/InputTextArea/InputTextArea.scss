@@ -1,0 +1,28 @@
+@import '../../index';
+
+
+.input-textarea {
+    @include inputStyle($input-height);
+
+    &__input {
+        padding-top: 20px !important;
+        font-family: $secundary-font;
+    }
+
+    &__input--blue-border {
+        border-color: $blue-color;
+    }
+}
+
+// Media queries
+@media (max-width: 991.98px) {
+    .input-text {
+        &__input {
+            font-size: $font-small !important;
+        }
+
+        &__label {
+            font-size: $font-small !important;
+        }
+    }
+}

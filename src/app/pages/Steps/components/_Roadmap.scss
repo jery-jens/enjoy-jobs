@@ -1,0 +1,190 @@
+@import '../../../index';
+
+.roadmap {
+    margin-bottom: 150px;
+
+    &__button {
+        margin-top: 30px;
+        background-color: $blue-color;
+        color: white !important;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: $font-small !important;
+        font-family: $primary-font;
+
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    &-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        a {
+            background-color: $blue-color;
+            color: white !important;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: $font-small !important;
+            border-radius: 10px;
+            font-family: $primary-font;
+        }
+    }
+
+    &__title {
+        @include fontTitle;
+        text-align: center;
+    }
+
+    &__steps {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &--line {
+            position: absolute;
+            width: 100%;
+            padding: 0 10px;
+            height: 10px;
+            overflow: hidden;
+
+            &__inner {
+                background-color: $orange-color;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &--step {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: ease-in-out 0.5s;
+            border-radius: 100%;
+            font-family: $primary-font;
+            font-weight: bold;
+            font-size: $font-regular;
+            position: relative;
+            z-index: 1000;
+        }
+
+        &--step.previous {
+            background-color: $orange-color;
+            cursor: pointer;
+            color: white;
+        }
+
+        &--step.current {
+            background-color: white;
+            cursor: auto;
+            color: $orange-color;
+            border: 4px solid $orange-color;
+        }
+
+        &--step.next {
+            background-color: $orange-color;
+            cursor: pointer;
+            color: white;
+        }
+    }
+
+    &__card {
+        background-color: $lightgrey-color;
+        border-radius: 10px;
+        padding: 30px 30px;
+        margin-top: 50px;
+        transition: ease-in-out 0.5s;
+        position: relative;
+        right: 0;
+        opacity: 1;
+
+        &--title {
+            text-align: center;
+            font-family: $primary-font;
+            font-size: $font-medium-large;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        &--img {
+            display: flex;
+            justify-content: center;
+        }
+
+        &--text {
+            margin-top: 50px;
+
+            p {
+                font-family: $secundary-font;
+                font-size: $font-regular;
+                line-height: 1.9;
+            }
+
+
+            .contact-text {
+                margin-top: 30px;
+
+                p {
+                    margin: 0 !important;
+                    font-size: $font-regular;
+                    font-weight: bold;
+                    font-family: $primary-font;
+                }
+
+                &__item {
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 0.5px solid $mediumgrey-color;
+                    padding: 15px 0;
+                }
+            }
+
+            a {
+                color: $blue-color;
+                font-size: $font-regular;
+                font-family: $primary-font;
+            }
+
+            .contact-ending {
+                font-weight: bold;
+                color: $blue-color;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &__card.gone {
+        right: -250px;
+        opacity: 0;
+    }
+
+    &__card.add {
+        left: -250px;
+        right: 0;
+        opacity: 0;
+    }
+
+    &__card.comeBack {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+/** Media queries **/
+@media (max-width: 991.98px) {
+    .roadmap {
+        &__title {
+            font-size: calculateRem(28px);
+        }
+
+        &__card {
+            &--title {
+                font-size: $font-medium;
+            }
+        }
+    }
+}

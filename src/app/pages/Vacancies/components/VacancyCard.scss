@@ -1,0 +1,146 @@
+@import '../../../index';
+
+.vacancy-card {
+    position: relative;
+    padding: 15px 15px;
+    margin: 10px 0;
+
+    background-color: $bg-color;
+    border-radius: 10px;
+
+    box-shadow: 0px 4px 4px rgba(215, 215, 215, 0.25);
+
+    // transition: border 1s;
+    transition: all 0.6s ease-out;
+
+    h2 {
+        font-family: $primary-font;
+        // font-size: calculateRem(22px);
+        font-size: calculateRem($font-medium-large);
+        font-weight: 400;
+        color: $blue-color;
+        margin: 0 ;
+    }
+
+    h3 {
+        font-family: $secundary-font;
+        font-size: calculateRem($font-regular);
+        font-weight: 300;
+        color: $mediumgrey-color;
+        margin: 0 0 5px;
+    }
+
+    .vacancy-card__info-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        font-family: $secundary-font;
+        font-weight: 400;
+
+        span {
+            color: $mediumgrey-color;
+            font-size: calculateRem($font-regular);
+        }
+
+        .vacancy-card-info__info {
+            width: 50%;
+            display: flex;
+            font-size: calculateRem($font-regular);
+            margin: 15px 0 15px;
+
+            p {
+                margin: 0;
+                margin-left: 10px;
+            }
+        }
+
+        .vacancy-card-info__read-more {
+            -webkit-appearance: none;
+            border-radius: 0;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            background-color: $lightblue-color;
+            color: $blue-color;
+        }
+
+        .vacancy-card-info__read-more:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .vacancy-card__selector {
+        width: 4px;
+        height: 0%;
+        position: absolute;
+        right: 0px;
+        top:0;
+
+        transition: height 0.3s ease-out;
+    }
+
+    .vacancy-card__selector--selected {
+        background-color: $orange-color;
+        width: 4px;
+        height: 100%;
+    }
+}
+
+.vacancy-card:hover {
+    cursor: pointer;
+}
+
+.vacancy-card--selescted {
+    // border-right: 4px solid $orange-color;
+    // padding-right: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.vacancy-card--md {
+    h2 {
+        // font-size: $font-medium;
+        font-size: calculateRem($font-medium-large-mob);
+    }
+    h3 {
+        font-size: calculateRem($font-small-regular);
+    }
+
+    .vacancy-card__info-container {
+        .vacancy-card-info__info {
+            margin: 15px 0;
+            display: block;
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.vacancy-card--mob {
+    border-radius: 7px;
+    background-color: $lightgrey-color;
+    h2 {
+        // font-size: $font-medium;
+        font-size: calculateRem($font-medium-large-mob);
+    }
+    h3 {
+        font-size: calculateRem($font-small-regular);
+    }
+
+    .vacancy-card__info-container {
+        .vacancy-card-info__info {
+            margin: 15px 0;
+            display: block;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    .vacancy-card__selector {
+        display: none
+    }
+}

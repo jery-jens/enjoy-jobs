@@ -1,0 +1,64 @@
+@import '../../index';
+
+.input-search {
+    @include inputStyle($input-height);
+
+    &-wrapper {
+      position: relative;
+
+      &__results::-webkit-scrollbar {
+        display: none;
+      }
+
+      &__results {
+        position: absolute;
+        width: 100%;
+        top: 40px;
+        min-height: 100px;
+        max-height: 100px;
+        overflow-y: scroll;
+        border: 1px solid $grey-color;
+        border-radius: 10px; 
+        list-style: none;
+        padding: 0;
+        background-color: white;
+        z-index: 99;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        p {
+          padding: 10px 20px;
+          font-family: $secundary-font;
+          font-size: $font-regular;
+          margin: 0;
+        }
+        
+        li {
+          padding: 10px 20px;
+          border-bottom: 1px solid $lightgrey-color;
+          font-family: $secundary-font;
+          font-size: $font-regular;
+          transition: ease-in-out 0.5s;
+          cursor: pointer;
+        }
+
+        li:hover {
+          background-color: $lightgrey-color;
+        }
+    }
+  }
+}
+
+/** Media queries **/
+@media (max-width: 991.98px) {
+    .input-search {
+        &__input {
+            font-size: $font-small !important;
+            background-size: 10px;
+        }
+
+        &__label {
+            font-size: $font-small !important;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../../index';
+
+.about {
+    position: relative;
+    width: 100%;
+    margin-bottom: 150px;
+
+    &__image {
+        width: 45%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        div {
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__image.right-image {
+        right: 0;
+        left: auto;
+    }
+
+    &__context {
+        padding: 60px 0;
+
+        &--button {
+            padding-top: 30px;
+        }
+
+        h1 {
+            color: $blue-color;
+            font-family: $primary-font;
+            font-size: $font-medium-large;
+            font-weight: 500;
+        }
+
+        p {
+            font-family: $secundary-font;
+            font-size: $font-regular;
+            line-height: 1.5;
+        }
+
+        ul {
+            li {
+                font-family: $secundary-font;
+                font-size: $font-regular;
+            }
+        }
+    }
+}
+
+/** Media queries **/
+@media (max-width: 991.98px) {
+    .about {
+        &__image {
+            margin-top: 50px;
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+    }
+}

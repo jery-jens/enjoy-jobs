@@ -1,0 +1,38 @@
+@import '../../index';
+
+.apply-succes {
+    h1 {
+       @include fontTitle;
+    }
+
+    p {
+        @include fontText;
+    }
+
+    a {
+        @include fontText;
+        color: $blue-color;
+        display: block;
+        margin-bottom: 60px;
+    }
+
+    &__user-info {
+        display: inline-block;
+        background-color: $lightgrey-color;
+        border-radius: 10px;
+
+        padding: 30px 25px;
+        margin-bottom: 60px;
+
+        div {
+            display: flex;
+            align-items: center;
+
+
+            img {
+                width: 40px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

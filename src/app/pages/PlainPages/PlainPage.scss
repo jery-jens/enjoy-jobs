@@ -1,0 +1,18 @@
+@import '../../index';
+
+.plain-page {
+  h1 {
+    @include fontTitle;
+  }
+
+  p {
+    @include fontText;
+  }
+
+  h6 {
+    font-size: $font-regular;
+    font-family: $primary-font;
+    color: $blue-color;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,199 @@
+@import '../../../index';
+
+.profile-grid {
+    border-bottom: 0.5px solid $blue-color;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+
+        &--delete {
+            width: 15px;
+            cursor: pointer;
+        }
+
+        &--open {
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+
+            span {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                border: 2px solid $orange-color;
+                cursor: pointer;
+                transition: ease-in-out 0.5s;
+                margin-right: 20px;
+
+                img {
+                    width: 7.5px;
+                    transition: ease-in-out 0.5s;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-family: $primary-font;
+                font-weight: 300;
+                font-size: $font-small-regular;
+                text-transform: capitalize;
+            }
+        }
+
+        &--open.open-grid {
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__body {
+        padding: 20px 0px;
+
+        p {
+            padding: 5px 0px 5px 0;
+            margin: 0;
+            font-size: $font-small-regular;
+            font-family: $secundary-font;
+
+            strong {
+                font-weight: 600;
+                margin-right: 20px;
+            }
+        }
+
+        &--name {
+            width: 110px;
+        }
+    }
+}
+
+.profile-grid-mob {
+    &__add {
+        font-family: $secundary-font;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: $font-small-regular;
+        margin-top: 20px;
+    }
+
+    &__no-items {
+        font-family: $secundary-font;
+        font-weight: 200;
+        font-size: $font-regular;
+        font-style: italic;
+    }
+
+    &__add-form {
+        margin-top: 20px;
+
+        &--title {
+            font-family: $secundary-font;
+            font-weight: 600;
+            font-size: $font-regular;
+            text-transform:initial;
+        }
+
+        &--holder {
+            margin-top: 40px;
+
+            &__error {
+                margin-top: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                background-color: #ff4444bc;
+                font-family: $secundary-font;
+                font-weight: 200;
+                font-size: $font-small-regular;
+            }
+
+            &__submit {
+                button {
+                    border: none;
+                    background: #00C851;
+                    padding: 10px 20px;
+                    font-size: $font-small-regular;
+                    font-family: $secundary-font;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                span {
+                    border: none;
+                    background: #ff4444;
+                    padding: 10px 20px;
+                    font-size: $font-small-regular;
+                    font-family: $secundary-font;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
+
+                button:hover, span:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+.select-now {
+    font-family: $secundary-font;
+    margin: 10px 0px 30px 20px;
+    font-size: $font-small-regular;
+    display: flex;
+    align-items: center;
+
+    &--check {
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid $grey-color;
+        cursor: pointer;
+        margin-left: 10px;
+        position: relative;
+
+        &.checked {
+            &::after {
+                content: "";
+                background-color: #00C851;
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                border-radius: 100%;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+// Media queries
+@media (max-width: 991.98px) {
+    .profile-grid__body--inputs {
+        flex-wrap: wrap;
+
+        .input-text {
+            margin-bottom: 25px;
+        }
+    }
+
+    .profile-grid__body--inputs__input.action-input {
+        display: flex;
+        justify-content: center;
+    }
+}

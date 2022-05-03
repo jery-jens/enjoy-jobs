@@ -58,6 +58,7 @@ const Apply = () => {
         const name = document.getElementById('firstname').value + ' ' + document.getElementById('lastname').value;
         const email = document.getElementById('email').value;
         const mobile = document.getElementById('telephone').value;
+        const linkedin = document.getElementById('linkedin').value;
         const subject = 'Sollicitatie via contactformulier';
         const body = document.getElementById('message').value;
         const file = document.getElementById('apply-files').files.length !== 0 ? document.getElementById('apply-files').files[0] : null;
@@ -77,7 +78,8 @@ const Apply = () => {
                 body, 
                 file ? file : '', 
                 vacancy_id, 
-                (applyWithAccount) ? currentUser : null
+                (applyWithAccount) ? currentUser : null,
+                linkedin
             );
 
             document.body.style.cursor = 'auto';

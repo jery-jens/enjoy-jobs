@@ -473,7 +473,7 @@ const APIProvider = ({children}) => {
         return vacancies;
     };
 
-    const apply = async (name, email, mobile, body, file, vacancy_id, jwt) => {
+    const apply = async (name, email, mobile, body, file, vacancy_id, jwt, linkedin) => {
         const data = new FormData();
 
         data.append('name', name);
@@ -483,6 +483,7 @@ const APIProvider = ({children}) => {
         data.append('body', body);
         data.append('file', file);
         data.append('vacancy_id', vacancy_id);
+        data.append('linkedin', linkedin);
 
         let url = `${BASE_URL}/vacancy/apply`;
 
